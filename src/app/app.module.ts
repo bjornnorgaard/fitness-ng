@@ -1,3 +1,4 @@
+import { NgMaterialModule } from './ng-material/ng-material.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -10,7 +11,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgMaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
