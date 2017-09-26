@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  fitnessApiUrl: 'https://ittweb-fitness-api-prod.herokuapp.com/'
 };
