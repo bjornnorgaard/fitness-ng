@@ -5,5 +5,5 @@
 
 export const environment = {
   production: false,
-  fitnessApiUrl: 'https://ittweb-fitness-api-prod.herokuapp.com'
+  fitnessApiUrl: 'https://ittweb-fitness-api-dev.herokuapp.com'
 };

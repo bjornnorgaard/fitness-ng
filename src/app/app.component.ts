@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Workout } from './shared/class/workout';
 import { FitnessService } from './shared/service/fitness.service';
 
 @Component({
@@ -8,14 +9,15 @@ import { FitnessService } from './shared/service/fitness.service';
 })
 export class AppComponent implements OnInit {
 
-  title = 'app';
+  workout: Workout;
 
   constructor(private fitnessService: FitnessService) {
-
   }
 
   ngOnInit(): void {
-    this.fitnessService.getWorkout('59c4dc2f44830b3aa07341d5');
+    this.fitnessService.getWorkout('59c4dc2f44830b3aa07341d5').subscribe(data => {
+      this.workout = data;
+    });
   }
 
 }

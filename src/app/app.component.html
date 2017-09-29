@@ -3,20 +3,20 @@
   <p>Fitness</p>
 </md-toolbar>
 
-<md-card>
+<md-card *ngIf="workout">
   <md-card-title-group>
-    <md-card-title>Morning workout!</md-card-title>
+    <md-card-title>{{workout.title}}</md-card-title>
   </md-card-title-group>
   <md-card-content>
 
     <md-card>
       <md-card-title-group>
-        <md-card-title>Squats</md-card-title>
+        <md-card-title>{{workout.exercises[0].title}}</md-card-title>
       </md-card-title-group>
       <md-card-content>
-        <p>Do some squats, beefcake!</p>
-        <p>sets: 3</p>
-        <p>reps: 20</p>
+        <p>{{workout.exercises[0].description}}</p>
+        <p>{{workout.exercises[0].sets}}</p>
+        <p>{{workout.exercises[0].reps}}</p>
       </md-card-content>
     </md-card>
 
