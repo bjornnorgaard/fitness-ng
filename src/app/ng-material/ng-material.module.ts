@@ -5,7 +5,7 @@ import {
   MdCardModule,
   MdDialogModule,
   MdListModule,
-  MdRadioModule,
+  MdRadioModule, MdSelectModule, MdSnackBarModule,
   MdToolbarModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,7 +19,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdCardModule,
     MdRadioModule,
     MdListModule,
-    MdDialogModule
+    MdDialogModule,
+    MdSelectModule,
+    MdSnackBarModule
   ],
   exports: [
     CommonModule,
@@ -29,7 +31,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdCardModule,
     MdRadioModule,
     MdListModule,
-    MdDialogModule
+    MdDialogModule,
+    MdSelectModule,
+    MdSnackBarModule
   ],
   declarations: []
 })
