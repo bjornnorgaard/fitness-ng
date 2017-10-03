@@ -3,22 +3,35 @@
   <p>Fitness</p>
 </md-toolbar>
 
-<md-card *ngIf="workout">
+<md-card>
   <md-card-title-group>
-    <md-card-title>{{workout.title}}</md-card-title>
+    <md-card-title>
+      Create new workout
+    </md-card-title>
   </md-card-title-group>
-  <md-card-content>
-
-    <md-card>
-      <md-card-title-group>
-        <md-card-title>{{workout.exercises[0].title}}</md-card-title>
-      </md-card-title-group>
-      <md-card-content>
-        <p>{{workout.exercises[0].description}}</p>
-        <p>{{workout.exercises[0].sets}}</p>
-        <p>{{workout.exercises[0].reps}}</p>
-      </md-card-content>
-    </md-card>
-
-  </md-card-content>
 </md-card>
+
+<div *ngFor="let w of workouts ">
+  <md-card>
+    <md-card-title-group>
+      <md-card-title>{{w.title}}</md-card-title>
+      <md-card-actions>
+        <button md-button (click)=logWorkout(w._id)>LOG</button>
+      </md-card-actions>
+    </md-card-title-group>
+    <md-card-content>
+      <div *ngFor="let e of w.exercises">
+        <md-card>
+          <md-card-title-group>
+            <md-card-title>{{e.title}}</md-card-title>
+            <md-card-subtitle>{{e.description}}</md-card-subtitle>
+          </md-card-title-group>
+          <md-card-content>
+            <p>sets: {{e.sets}}</p>
+            <p>reps: {{e.reps}}</p>
+          </md-card-content>
+        </md-card>
+      </div>
+    </md-card-content>
+  </md-card>
+</div>

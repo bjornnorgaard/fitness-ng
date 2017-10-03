@@ -9,15 +9,19 @@ import { FitnessService } from './shared/service/fitness.service';
 })
 export class AppComponent implements OnInit {
 
-  workout: Workout;
+  workouts: Workout[];
 
   constructor(private fitnessService: FitnessService) {
   }
 
   ngOnInit(): void {
-    this.fitnessService.getWorkout('59c4dc2f44830b3aa07341d5').subscribe(data => {
-      this.workout = data;
+    this.fitnessService.getAllWorkouts().subscribe(data => {
+      this.workouts = data;
+      console.log(data);
     });
   }
 
+  logWorkout(id: Number) {
+    console.log('Logging activity for workout with id: ' + id);
+  }
 }

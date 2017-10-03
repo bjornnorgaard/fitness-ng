@@ -1,7 +1,7 @@
 import { Exercise } from './exercises';
 
 export interface Workout {
-  id: Number;
+  _id: Number;
   title: String;
   exercises: Exercise[];
 }
