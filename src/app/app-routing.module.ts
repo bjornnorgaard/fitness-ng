@@ -8,7 +8,6 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'home', component: HomeComponent},
   {path: 'workout', component: WorkoutComponent},
-  {path: 'exercise/:id', component: ExerciseComponent},
   {path: '**', component: HomeComponent},
 ];
 

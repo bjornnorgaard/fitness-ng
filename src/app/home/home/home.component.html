@@ -1,3 +1,10 @@
+<md-card *ngIf="workouts == undefined || workouts.length == 0">
+  <md-card-title-group>
+    <md-card-title>You should add some workouts</md-card-title>
+    <md-card-subtitle>Click 'Workout' in the navbar above</md-card-subtitle>
+  </md-card-title-group>
+</md-card>
+
 <div *ngFor="let w of workouts ">
   <md-card>
     <md-card-title-group>
@@ -6,7 +13,11 @@
     </md-card-title-group>
     <md-card-content>
 
-      <table>
+      <table *ngIf="w.exercises == undefined || w.exercises.length == 0">
+        <p>Click below to add an exercise</p>
+      </table>
+
+      <table *ngIf="w.exercises != undefined && w.exercises.length != 0">
         <tr>
           <th>Title</th>
           <th>Desc</th>
