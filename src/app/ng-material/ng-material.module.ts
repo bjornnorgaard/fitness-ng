@@ -1,11 +1,16 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MdButtonModule,
-  MdCardModule,
+  MdCardModule, MdChipsModule,
   MdDialogModule,
+  MdInputModule,
   MdListModule,
-  MdRadioModule, MdSelectModule, MdSnackBarModule,
+  MdProgressSpinnerModule,
+  MdRadioModule,
+  MdSelectModule,
+  MdSnackBarModule, MdTableModule,
   MdToolbarModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -21,7 +26,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdListModule,
     MdDialogModule,
     MdSelectModule,
-    MdSnackBarModule
+    MdSnackBarModule,
+    MdProgressSpinnerModule,
+    MdInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MdTableModule,
+    MdChipsModule,
   ],
   exports: [
     CommonModule,
@@ -33,7 +44,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdListModule,
     MdDialogModule,
     MdSelectModule,
-    MdSnackBarModule
+    MdSnackBarModule,
+    MdProgressSpinnerModule,
+    MdInputModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MdTableModule,
+    MdChipsModule,
   ],
   declarations: []
 })
