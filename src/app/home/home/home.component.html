@@ -4,19 +4,23 @@
       <md-card-title>{{w.title}}</md-card-title>
     </md-card-title-group>
     <md-card-content>
-      <div *ngFor="let e of w.exercises">
-        <md-card>
-          <md-card-title-group>
-            <md-card-title>{{e.title}}</md-card-title>
-            <md-card-subtitle>{{e.description}}</md-card-subtitle>
-          </md-card-title-group>
-          <md-card-content>
-            <p>sets: {{e.sets}}</p>
-            <p>reps: {{e.reps}}</p>
-          </md-card-content>
-        </md-card>
-      </div>
-      <md-card-actions style="padding-left: 2em;">
+
+      <table>
+        <tr>
+          <th>Title</th>
+          <th>Desc</th>
+          <th>Sets</th>
+          <th>Reps</th>
+        </tr>
+        <tr *ngFor="let e of w.exercises">
+          <td>{{e.title}}</td>
+          <td>{{e.description}}</td>
+          <td>{{e.sets}}</td>
+          <td>{{e.reps}}</td>
+        </tr>
+      </table>
+
+      <md-card-actions style="padding-top: 2em;">
         <button md-button color="primary" (click)=createExercise(w._id)>ADD EXERCISE</button>
         <button md-button color="accent" (click)=logWorkout(w._id)>LOG ACTIVITY</button>
       </md-card-actions>

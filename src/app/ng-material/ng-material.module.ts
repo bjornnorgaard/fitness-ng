@@ -10,7 +10,7 @@ import {
   MdProgressSpinnerModule,
   MdRadioModule,
   MdSelectModule,
-  MdSnackBarModule,
+  MdSnackBarModule, MdTableModule,
   MdToolbarModule
 } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -31,6 +31,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdInputModule,
     FormsModule,
     ReactiveFormsModule,
+    MdTableModule,
   ],
   exports: [
     CommonModule,
@@ -47,6 +48,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdInputModule,
     FormsModule,
     ReactiveFormsModule,
+    MdTableModule,
   ],
   declarations: []
 })
