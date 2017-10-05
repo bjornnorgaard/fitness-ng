@@ -1,4 +1,3 @@
-import { Workout } from './../class/workout';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import 'rxjs/add/operator/catch';
@@ -7,6 +6,8 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/retry';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../../environments/environment';
+import { Workout } from '../class/workout';
+import { Exercise } from '../class/exercises';
 
 @Injectable()
 export class FitnessService {
@@ -16,12 +17,20 @@ export class FitnessService {
   constructor(private http: HttpClient) {
   }
 
-  getWorkout(id: string): Observable<Workout> {
-    return this.http.get<Workout>(this.baseUrl + '/workouts/' + id);
+  getAllWorkouts(): Observable<Workout[]> {
+    return this.http.get<Workout[]>(this.baseUrl + '/workouts');
   }
 
-  getAllWorkouts(): Observable<Workout[]> {
-    return this.http.get<Workout[]>(this.baseUrl + '/workouts/');
+  createExercise(exercise: Exercise): void {
+    this.http.post(this.baseUrl + '/exercises', exercise).subscribe();
+  }
+
+  createWorkout(title: string): void {
+    this.http.post(this.baseUrl + '/workouts', {title}).subscribe();
+  }
+
+  createLog(workoutId: number): void {
+    this.http.post(this.baseUrl + '/logs', workoutId).subscribe();
   }
 
 }
