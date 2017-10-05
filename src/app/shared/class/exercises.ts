@@ -1,6 +1,7 @@
 export interface Exercise {
-  title: String;
-  description: String;
-  sets: Number;
-  reps: Number;
+  workoutId: number;
+  title: string;
+  description: string;
+  sets: number;
+  reps: number;
 }
