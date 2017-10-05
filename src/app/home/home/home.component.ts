@@ -22,8 +22,9 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  logWorkout(id: Number) {
+  logWorkout(id: number) {
     this.snackbar.open('Activity Logged', null, {duration: 1500});
+    this.fitnessService.createLog(id);
   }
 
   createExercise(id: Number) {
