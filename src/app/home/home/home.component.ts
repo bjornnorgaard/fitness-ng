@@ -4,7 +4,7 @@ import { Workout } from '../../shared/class/workout';
 import { ExerciseComponent } from '../exercise/exercise.component';
 import { FitnessService } from '../../shared/service/fitness.service';
 import { MdSnackBar, MdDialog } from '@angular/material';
-import {Exercise} from "../../shared/class/exercises";
+import {Exercise} from '../../shared/class/exercises';
 
 @Component({
   selector: 'app-home',
@@ -30,11 +30,12 @@ export class HomeComponent implements OnInit {
     this.fitnessService.createLog(id);
   }
 
-  createExercise() {
+  createExercise(workoutId: number) {
 
       const dialogRef = this.dialog.open(ExerciseComponent);
 
       dialogRef.afterClosed().subscribe(result => {
+        result.workoutId = workoutId;
           console.log('exercise name: ' + result.title);
           console.log('description: ' + result.description);
           console.log('sets: ' + result.sets);
@@ -48,6 +49,10 @@ export class HomeComponent implements OnInit {
   private addExercise(result: Exercise) {
     this.fitnessService.createExercise(result);
 
-    alert('Exercise created');
+    this.snackbar.open('Exercise created: ' + result.title, null, {duration: 1500});
+
+    setTimeout(() => {
+        window.location.reload();
+    }, 50);
   }
 }
