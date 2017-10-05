@@ -30,7 +30,7 @@ export class FitnessService {
   }
 
   createLog(workoutId: number): void {
-    this.http.post(this.baseUrl + '/logs', workoutId).subscribe();
+    this.http.post(this.baseUrl + '/logs', {workoutId}).subscribe();
   }
 
 }

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MdButtonModule,
-  MdCardModule,
+  MdCardModule, MdChipsModule,
   MdDialogModule,
   MdInputModule,
   MdListModule,
@@ -32,6 +32,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     MdTableModule,
+    MdChipsModule,
   ],
   exports: [
     CommonModule,
@@ -49,6 +50,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     MdTableModule,
+    MdChipsModule,
   ],
   declarations: []
 })
