@@ -29,7 +29,7 @@ export class WorkoutComponent {
     // Wait here
     setTimeout(() => {
       this.router.navigate(['/']);
-    }, 500);
+    }, 50);
   }
 
   cancel() {
