@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { FitnessService } from '../../shared/service/fitness.service';
-import { delay } from 'rxjs/operator/delay';
 
 @Component({
   selector: 'app-workout',
@@ -26,9 +25,10 @@ export class WorkoutComponent {
     const title = this.workoutFormGroup.controls['title'].value as string;
     console.log('Creating workout with title: ' + title);
     this.fitnessService.createWorkout(title);
+
     setTimeout(() => {
-        window.location.reload();
-        this.router.navigate(['/']);
+      window.location.reload();
+      this.router.navigate(['/']);
     }, 50);
   }
 
