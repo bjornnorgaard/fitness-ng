@@ -1,9 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   MdButtonModule,
   MdCardModule,
   MdDialogModule,
+  MdInputModule,
   MdListModule,
   MdProgressSpinnerModule,
   MdRadioModule,
@@ -25,7 +27,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdDialogModule,
     MdSelectModule,
     MdSnackBarModule,
-    MdProgressSpinnerModule
+    MdProgressSpinnerModule,
+    MdInputModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports: [
     CommonModule,
@@ -38,7 +43,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MdDialogModule,
     MdSelectModule,
     MdSnackBarModule,
-    MdProgressSpinnerModule
+    MdProgressSpinnerModule,
+    MdInputModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   declarations: []
 })
