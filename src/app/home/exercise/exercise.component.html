@@ -1,12 +1,30 @@
-<md-card>
-  <md-card-title-group>
-    <md-card-title>Exercise</md-card-title>
-    <md-card-subtitle>Creating new Exercise</md-card-subtitle>
-  </md-card-title-group>
-  <md-card-content>
-    <p>this is content</p>
-    <md-card-actions>
-      <button md-raised-button color="primary">SAVE</button>
-    </md-card-actions>
-  </md-card-content>
-</md-card>
+<h1 md-dialog-title>Add an exercise</h1>
+<form (ngSubmit)="saveDialog()" #newExerciseForm="ngForm">
+  <div md-dialog-content>
+      <div>
+        <md-input-container class="row">
+          <input mdInput placeholder="Exercise name" [(ngModel)]="exerciseName" name="exerciseName">
+        </md-input-container>
+      </div>
+      <div>
+          <md-input-container class="row">
+              <input mdInput placeholder="Exercise Description" [(ngModel)]="exerciseDescription" name="exerciseDescription">
+          </md-input-container>
+      </div>
+      <div>
+        <md-input-container class="row">
+          <input type="number" mdInput placeholder="Amount of sets" [(ngModel)]="setsAmount" name="setsAmount">
+        </md-input-container>
+      </div>
+      <div>
+        <md-input-container class="row">
+          <input type="number" mdInput placeholder="Amount of reps" [(ngModel)]="repsAmount" name="repsAmount">
+        </md-input-container>
+      </div>
+    </div>
+    <md-dialog-actions style="float:right">
+        <button md-button md-raised-button color="accent" type="submit">Save</button>
+    <!-- Can optionally provide a result for the closing dialog. -->
+    <button md-button md-raised-button color="accent" (click)="closeDialog()">Cancel</button>
+  </md-dialog-actions>
+</form>

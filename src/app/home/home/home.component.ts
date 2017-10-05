@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Workout } from '../../shared/class/workout';
+import { ExerciseComponent } from '../exercise/exercise.component';
 import { FitnessService } from '../../shared/service/fitness.service';
-import { MdSnackBar } from '@angular/material';
+import { MdSnackBar, MdDialog } from '@angular/material';
+import {Exercise} from '../../shared/class/exercises';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +15,8 @@ export class HomeComponent implements OnInit {
 
   workouts: Workout[];
 
-  constructor(private fitnessService: FitnessService, private router: Router, private snackbar: MdSnackBar) {
+  constructor(private fitnessService: FitnessService, private router: Router, private snackbar: MdSnackBar,
+            private dialog: MdDialog) {
   }
 
   ngOnInit(): void {
@@ -27,8 +30,29 @@ export class HomeComponent implements OnInit {
     this.fitnessService.createLog(id);
   }
 
-  createExercise(id: Number) {
-    this.router.navigate(['/exercise', id]);
+  createExercise(workoutId: number) {
+
+      const dialogRef = this.dialog.open(ExerciseComponent);
+
+      dialogRef.afterClosed().subscribe(result => {
+        result.workoutId = workoutId;
+          console.log('exercise name: ' + result.title);
+          console.log('description: ' + result.description);
+          console.log('sets: ' + result.sets);
+          console.log('reps: ' + result.reps);
+
+          this.addExercise(result);
+      });
+
   }
 
+  private addExercise(result: Exercise) {
+    this.fitnessService.createExercise(result);
+
+    this.snackbar.open('Exercise created: ' + result.title, null, {duration: 1500});
+
+    setTimeout(() => {
+        window.location.reload();
+    }, 50);
+  }
 }

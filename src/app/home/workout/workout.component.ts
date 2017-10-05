@@ -27,7 +27,8 @@ export class WorkoutComponent {
     console.log('Creating workout with title: ' + title);
     this.fitnessService.createWorkout(title);
     setTimeout(() => {
-      this.router.navigate(['/']);
+        window.location.reload();
+        this.router.navigate(['/']);
     }, 50);
   }
 
