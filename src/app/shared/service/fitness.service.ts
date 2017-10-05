@@ -22,15 +22,15 @@ export class FitnessService {
   }
 
   createExercise(exercise: Exercise): void {
-    this.http.post(this.baseUrl + '/exercises', exercise);
+    this.http.post(this.baseUrl + '/exercises', exercise).subscribe();
   }
 
-  createWorkout(workout: Workout): void {
-    this.http.post(this.baseUrl + '/workouts', workout);
+  createWorkout(title: string): void {
+    this.http.post(this.baseUrl + '/workouts', {title}).subscribe();
   }
 
   createLog(workoutId: number): void {
-    this.http.post(this.baseUrl + '/logs', workoutId);
+    this.http.post(this.baseUrl + '/logs', workoutId).subscribe();
   }
 
 }

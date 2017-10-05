@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { FitnessService } from '../../shared/service/fitness.service';
 
 @Component({
   selector: 'app-workout',
@@ -11,7 +12,7 @@ export class WorkoutComponent {
 
   workoutFormGroup: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private router: Router, private fitnessService: FitnessService) {
     this.workoutFormGroup = formBuilder.group({
       'title': [null, Validators.compose([
         Validators.required,
@@ -21,7 +22,9 @@ export class WorkoutComponent {
   }
 
   postWorkout() {
-    console.log(this.workoutFormGroup.controls['title'].value as string);
+    const title = this.workoutFormGroup.controls['title'].value as string;
+    console.log('Creating workout with title: ' + title);
+    this.fitnessService.createWorkout(title);
   }
 
   cancel() {
