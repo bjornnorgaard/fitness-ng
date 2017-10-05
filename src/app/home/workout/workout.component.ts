@@ -26,7 +26,6 @@ export class WorkoutComponent {
     const title = this.workoutFormGroup.controls['title'].value as string;
     console.log('Creating workout with title: ' + title);
     this.fitnessService.createWorkout(title);
-    // Wait here
     setTimeout(() => {
       this.router.navigate(['/']);
     }, 50);
