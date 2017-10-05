@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Workout } from '../../shared/class/workout';
+import { ExerciseComponent } from '../exercise/exercise.component';
 import { FitnessService } from '../../shared/service/fitness.service';
-import { MdSnackBar } from '@angular/material';
+import { MdSnackBar, MdDialog } from '@angular/material';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,8 @@ export class HomeComponent implements OnInit {
 
   workouts: Workout[];
 
-  constructor(private fitnessService: FitnessService, private router: Router, private snackbar: MdSnackBar) {
+  constructor(private fitnessService: FitnessService, private router: Router, private snackbar: MdSnackBar,
+            private dialog: MdDialog) {
   }
 
   ngOnInit(): void {
@@ -27,7 +29,13 @@ export class HomeComponent implements OnInit {
   }
 
   createExercise(id: Number) {
-    this.router.navigate(['/exercise', id]);
+
+      const dialogRef = this.dialog.open(ExerciseComponent);
+
+      dialogRef.afterClosed().subscribe(result => {
+          console.log("stuff");
+      });
+
   }
 
 }

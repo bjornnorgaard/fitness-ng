@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {MdDialogRef} from '@angular/material';
 
 @Component({
   selector: 'app-exercise',
   templateUrl: './exercise.component.html',
   styleUrls: ['./exercise.component.css']
 })
-export class ExerciseComponent implements OnInit {
+export class ExerciseComponent {
 
-  constructor() { }
+  public exerciseName: string;
+  public repsAmount: string;
 
-  ngOnInit() {
+  constructor(public dialogRef: MdDialogRef<ExerciseComponent>) { }
+
+  closeDialog() {
+    this.dialogRef.close(undefined);
   }
 
+  saveDialog() {
+
+  }
 }
