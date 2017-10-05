@@ -17,7 +17,7 @@ export class WorkoutComponent {
       'title': [null, Validators.compose([
         Validators.required,
         Validators.minLength(3),
-        Validators.maxLength(15)])]
+        Validators.maxLength(30)])]
     });
   }
 

@@ -1,7 +1,9 @@
-export interface Exercise {
-  workoutId: number;
-  title: string;
-  description: string;
-  sets: number;
-  reps: number;
+export class Exercise {
+
+  constructor(public workoutId: string,
+              public title: string,
+              public description: string,
+              public sets: string,
+              public reps: string) {
+  }
 }

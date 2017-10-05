@@ -6,8 +6,8 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/retry';
 import { Observable } from 'rxjs/Observable';
 import { environment } from '../../../environments/environment';
-import { Exercise } from '../class/exercises';
 import { Workout } from '../class/workout';
+import { Exercise } from '../class/exercises';
 
 @Injectable()
 export class FitnessService {
@@ -18,7 +18,7 @@ export class FitnessService {
   }
 
   getAllWorkouts(): Observable<Workout[]> {
-    return this.http.get<Workout[]>(this.baseUrl + '/workouts/');
+    return this.http.get<Workout[]>(this.baseUrl + '/workouts');
   }
 
   createExercise(exercise: Exercise): void {
