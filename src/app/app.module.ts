@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
 import { ExerciseComponent } from './home/exercise/exercise.component';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ExerciseComponent } from './home/exercise/exercise.component';
     NgMaterialModule,
     SharedModule,
     HomeModule,
+    AuthModule,
   ],
   providers: [],
   entryComponents: [

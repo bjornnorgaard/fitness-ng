@@ -1,0 +1,17 @@
+<md-card>
+  <md-card-title-group>
+    <md-card-title>Sign in</md-card-title>
+    <md-card-subtitle>Use your credentials to sign in</md-card-subtitle>
+  </md-card-title-group>
+  <md-card-content>
+
+    <form role="form" (ngSubmit)="login()" [formGroup]="loginFormGroup">
+      <md-form-field><input mdInput formControlName="username" placeholder="Username" type="text"></md-form-field>
+      <br>
+      <md-form-field><input mdInput formControlName="password" placeholder="Password" type="password"></md-form-field>
+      <br>
+
+      <button md-raised-button color="primary" type="submit" [disabled]="!loginFormGroup.valid">LOGIN</button>
+    </form>
+  </md-card-content>
+</md-card>
